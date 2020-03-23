@@ -5,6 +5,10 @@ import org.sridhar.sorting.utils.SortUtil;
 /**
  * Created by sridharrajagopal on 3/23/20.
  * Time complexity : O(n ^ 2)
+ * i = 0    1     2   ......  n-1
+ * j = n-1  n-2   n-3 ....3 2 1
+ * Time Complexity = Sum of numbers from 1+2+3...(n-3)+(n-2)+(n-1) = n(n-1)/2 = O(n ^ 2)
+ * Both best and worst case complexity is O(n ^ 2)
  * Space complexity : O(1)
  * In place algorithm
  * unstable algorithm - Consider {2(a), 2(b), 1(c)}

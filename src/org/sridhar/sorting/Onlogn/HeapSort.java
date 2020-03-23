@@ -10,7 +10,8 @@ import org.sridhar.sorting.utils.SortUtil;
  * Space Complexity : O(1)
  * Below link says recursion can be replaced by iteration to avoid O(logn) space. https://www.toptal.com/developers/sorting-algorithms/heap-sort
  * In place algorithm
- * Unstable algorithm
+ * Unstable algorithm - In heapsort, the maximum element is moved to the end of the array. When you create the heap the order of the elements is lost
+ *
  * arr = {10,50,80,60,70,100,200}
  *                10
  *            50        80

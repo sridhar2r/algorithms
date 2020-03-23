@@ -13,7 +13,8 @@ public class StableAlgorithmEvaluation {
         StableCls[] stableArr = SortUtil.getStableArr();
         System.out.println("Before Sort " + Arrays.toString(stableArr));
         //performInsertionSortStable(stableArr);
-        performSelectionSortSortable(stableArr);
+        performSelectionSortStable(stableArr);
+        //performInsertionSortStableVariation(stableArr);
         System.out.println("After Sort " +Arrays.toString(stableArr));
     }
 
@@ -29,7 +30,19 @@ public class StableAlgorithmEvaluation {
         }
     }
 
-    private static void performSelectionSortSortable(StableCls[] arr) {
+    private static void performInsertionSortStableVariation(StableCls[] arr) {
+        for(int i = 1; i < arr.length; i++) {
+            StableCls elementToCompare = arr[i];
+            int j = i;
+            while (j > 0 && arr[j - 1].getNbr() > elementToCompare.getNbr()) {
+                arr[j] = arr[j-1];
+                j--;
+            }
+            arr[j] = elementToCompare;
+        }
+    }
+
+    private static void performSelectionSortStable(StableCls[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int minElt = i;
             for (int j = i + 1; j < arr.length; j++) {
@@ -37,7 +50,11 @@ public class StableAlgorithmEvaluation {
                     minElt = j;
                 }
             }
-            SortUtil.swap(arr, minElt, i);
+            StableCls minimumElement = arr[minElt];
+            for (int j = minElt; j > i; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[i] = minimumElement;
         }
     }
 }

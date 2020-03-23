@@ -19,10 +19,12 @@ public class SortUtil {
     }
 
     public static StableCls[] getStableArr() {
-        int[] nbrArr = {23,42,4,16,4,15};
-        StableCls[] arr = new StableCls[6];
+        //int[] nbrArr = {23,42,4,16,4,15};
+        //int[] nbrArr = {5,2,3,8,4,5,6};
+        int[] nbrArr = {2,2,1};
+        StableCls[] arr = new StableCls[nbrArr.length];
         StableCls stableCls = null;
-        for(int count = 0; count < 6; count++) {
+        for(int count = 0; count < nbrArr.length; count++) {
             stableCls = new StableCls(nbrArr[count], (char) ('A' + count));
             arr[count] = stableCls;
         }

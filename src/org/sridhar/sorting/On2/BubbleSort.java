@@ -7,7 +7,13 @@ import org.sridhar.sorting.utils.SortUtil;
  * Time complexity - O(n ^ 2)
  * Space complexity - O(1)
  * In place algorithm
- * Stable algorithm
+ * Stable algorithm - e.g., {2(a), 2(b), 1(c)}
+ * Swapping happens when element is lower than adjacent element. So if we have two equal elements,  the second element
+ * only has a possibility of getting swapped to the position after 1st element
+ * e.g. {9(d), 2(a), 2(b), 10(c)}
+ *   -- {2(a), 9(d), 2(b), 10(c)}
+ *   -- {2(a), 2(b), 9(d), 10(c)}
+ *
  * Compares each element with adjacent element and if it is out of order it is swapped.
  * This is repeated for n times till entire array is sorted
  * Optimizations : 1, Having a isSorted flag to check if iteration went without sorting and stop if it does
@@ -16,9 +22,10 @@ import org.sridhar.sorting.utils.SortUtil;
  */
 public class BubbleSort {
     public static void main(String[] args) {
-       // int[] arr = {9,6,5,3,2};
-      //  int[] arr = {13, 3242, 23, 2351, 352, 3915, 123, 32, 1, 5, 0};
+        //int[] arr = {9,6,5,3,2};
+        //int[] arr = {13, 3242, 23, 2351, 352, 3915, 123, 32, 1, 5, 0};
         int[] arr = {9,6,7,6,2};
+        //int[] arr = {9,2,2,10};
         performBubbleSortOptimized(arr);
         SortUtil.printArray(arr);
     }

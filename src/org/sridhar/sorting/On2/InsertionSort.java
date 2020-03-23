@@ -7,12 +7,18 @@ import java.util.Arrays;
 /**
  * Created by sridharrajagopal on 3/23/20.
  * Time complexity : O(n^2)
- * i = 0  1  2  3  4 .... n-1
- * j = 1  2  3  4  5 .... n
+ * i = 1  2  3  3  4 .... n-1
+ * j = 1  2  3  4  5 .... n-1
  * Time Complexity = 1 + 2 + 3 + 4 + 5... n-1 = n(n-1)/2 = n ^ 2 = O(n^2)
  * Best Case complexity, already sorted array. Only sorted portion is built from left to right : Omega(n)
  * Space complexity : O(1)
- * Inplace, stable algorithm
+ * Inplace algorithm
+ * stable algorithm - e.g., {2(a), 2(b), 1(c)}
+ * First iteration  - {2(a), 2(b)| 1(c)} -> 2(b) inserted in sorted array
+ * Second iteration - {2(a),  |2(b)} elementToCompare = 1(c)
+ *                    { ,2(a)|2(b)} elementToCompare = 1(c)
+ *                    {1(c), 2(a), 2(b)}
+ *
  * Assume first element of array to be sorted and remaining elements to be unsorted.
  * Take first element from unsorted array and make it as element to be compared
  * compare element to compare with last element in sorted array. If sorted array element is greater than element to compare swap, and reduce the index in sorted array

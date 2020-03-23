@@ -7,18 +7,13 @@ import java.util.Arrays;
 
 /**
  * Created by sridharrajagopal on 3/23/20.
- * Time complexity : O(n^2)
- * i = 0  1  2  3  4 .... n-1
- * j = 1  2  3  4  5 .... n
- * Time Complexity = 1 + 2 + 3 + 4 + 5... n = n(n+1)/2 = n ^ 2 = O(n^2)
- * Space complexity : O(1)
- * Inplace, stable algorithm
  */
-public class InsertionSortStable {
+public class StableAlgorithmEvaluation {
     public static void main(String[] args) {
         StableCls[] stableArr = SortUtil.getStableArr();
         System.out.println("Before Sort " + Arrays.toString(stableArr));
-        performInsertionSortStable(stableArr);
+        //performInsertionSortStable(stableArr);
+        performSelectionSortSortable(stableArr);
         System.out.println("After Sort " +Arrays.toString(stableArr));
     }
 
@@ -31,6 +26,18 @@ public class InsertionSortStable {
                     SortUtil.swap(arr, j, index--);
                 }
             }
+        }
+    }
+
+    private static void performSelectionSortSortable(StableCls[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int minElt = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j].getNbr() < arr[minElt].getNbr()) {
+                    minElt = j;
+                }
+            }
+            SortUtil.swap(arr, minElt, i);
         }
     }
 }
